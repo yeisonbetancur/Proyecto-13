@@ -1,0 +1,131 @@
+*{
+  box-sizing: border-box;
+}
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  width: 50%;
+  height: 100px;
+  border-radius: 20px;
+  background-color: #ff0000;
+  align-items: center;
+  justify-content: space-between; /* Cambiado a 'center' para centrar el contenido */
+  margin: 20px auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  min-width: 500px;
+}
+
+header h1 {
+  margin: 0; /* Ajusta el margen para quitar el espacio predeterminado del h1 */
+  text-align: center; /* Alineación del texto en el centro */
+  color: white;
+  font-size: 2em; /* Tamaño de fuente */
+}
+
+
+img{
+  display: flex;
+  min-width: 150px;
+  width: 25vw;
+  aspect-ratio: 1/1;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-radius: 20px;
+  max-width: 190px;
+}
+
+.hand{
+  margin: 5vh 0;
+  display: flex;
+  justify-content: center;
+  gap: 3vh;
+  align-items: center;
+  flex-direction: row;
+  
+}
+
+h2 {
+  margin: 0; /* Ajusta el margen para quitar el espacio predeterminado del h1 */
+  text-align: center; /* Alineación del texto en el centro */
+  color: white;
+  font-size: 2em; /* Tamaño de fuente */
+  border: solid;
+  border-radius: 20px;
+  background-color: black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 100px);
+  min-width: 500px;
+}
+.overlay {
+  position: fixed; /* Fijar posición respecto a la ventana */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(199, 199, 199, 0.6); /* Color de fondo semitransparente */
+  z-index: 9999; /* Por encima de otros elementos */
+  display: flex; /* Usar 'flex' para centrar el contenido */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+}
+
+/* Estilo para los botones dentro del overlay */
+.overlay input[type="button"] {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  border: 2px solid #000000;
+  cursor: pointer; /* Cambia el cursor a una mano */
+}
+
+/* Inicialmente ocultar el overlay */
+.overlay.hidden {
+  display: none;
+}
+
+@keyframes animation {
+  0% {
+    transform: rotate(-8deg);
+  }
+
+  10% {
+    transform: rotate(8deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(8deg);
+  }
+
+  70% {
+    transform: rotate(-8deg);
+  }
+}
+
+.rock, .paper, .scissor {
+  animation: animation 1s ease-in-out 4 alternate;
+}
